@@ -13,5 +13,5 @@ sections:
 upload_dir: uploads
 public_path: "/src/uploads"
 front_matter_path: "../uploads"
-use_front_matter_path: true
-file_template: ":filename:"
+use_front_matter_path: false
+file_template: "../uploads/:filename:"
