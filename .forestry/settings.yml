@@ -15,3 +15,5 @@ public_path: "../uploads"
 front_matter_path: "../uploads"
 use_front_matter_path: false
 file_template: ":filename:"
+build:
+  preview_command: npm run build
