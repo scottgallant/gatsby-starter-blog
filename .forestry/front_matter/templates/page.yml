@@ -10,4 +10,5 @@ fields:
   name: date
   label: Date
 pages:
+- src/pages/test.md
 - src/pages/test-post.md
