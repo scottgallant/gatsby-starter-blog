@@ -26,3 +26,4 @@ file_template: ":filename:"
 custom_preview: true
 build:
   preview_command: gatsby develop -p 8080 -H 0.0.0.0
+  output_directory: public
