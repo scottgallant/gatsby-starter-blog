@@ -1,15 +1,33 @@
 import React from 'react'
+import {graphql, StaticQuery} from 'gatsby'
 
 // Import typefaces
 import 'typeface-montserrat'
 import 'typeface-merriweather'
 
-import profilePic from './profile-pic.jpg'
 import { rhythm } from '../utils/typography'
+import profilePic from '../uploads/profile-pic.jpg'
 
 class Bio extends React.Component {
   render() {
     return (
+      <StaticQuery
+        query={graphql`
+          query BioDataQuery {
+            dataJson {
+              name
+              profilePic { 
+                childImageSharp {
+                  fixed(width: 56, height: 56) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+              }
+              bio
+            }
+          }
+        `}
+        render = {data => (
       <div
         style={{
           display: 'flex',
@@ -17,8 +35,8 @@ class Bio extends React.Component {
         }}
       >
         <img
-          src={profilePic}
-          alt={`Kyle Mathews`}
+          src={data.dataJson.profilePic.childImageSharp.fixed.src}
+          alt={data.dataJson.name}
           style={{
             marginRight: rhythm(1 / 2),
             marginBottom: 0,
@@ -26,14 +44,10 @@ class Bio extends React.Component {
             height: rhythm(2),
           }}
         />
-        <p>
-          Written by <strong>Kyle Mathews</strong> who lives and works in San
-          Francisco building useful things.{' '}
-          <a href="https://twitter.com/kylemathews">
-            You should follow him on Twitter
-          </a>
-        </p>
+        <div dangerouslySetInnerHTML={{__html: data.dataJson.bio}}></div>
       </div>
+        )}
+        />
     )
   }
 }

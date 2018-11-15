@@ -1,11 +1,16 @@
+const config = require('./settings.json');
+const url = require('url');
+
+const siteUrl = url.parse(config.siteUrl);
+
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
-    author: 'Kyle Mathews',
-    description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
+    title: config.title,
+    author: config.author,
+    description: config.description,
+    siteUrl: config.siteUrl,
   },
-  pathPrefix: '/gatsby-starter-blog',
+  pathPrefix: siteUrl ? siteUrl.pathname : '/',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -19,6 +24,13 @@ module.exports = {
       options: {
         path: `${__dirname}/src/uploads`,
         name: 'uploads',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data`,
+        name: 'data',
       },
     },
     {
@@ -72,5 +84,6 @@ module.exports = {
         pathToConfigModule: 'src/utils/typography',
       },
     },
+    'gatsby-transformer-json'
   ],
 }
