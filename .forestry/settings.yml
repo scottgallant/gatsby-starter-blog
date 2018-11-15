@@ -15,7 +15,7 @@ sections:
   label: Data
   create: none
   match: "**/*.json"
-  new_doc_ext: ".json"
+  new_doc_ext: json
 upload_dir: src/uploads
 public_path: "../uploads"
 front_matter_path: "../uploads"
