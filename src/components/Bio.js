@@ -18,7 +18,7 @@ class Bio extends React.Component {
               name
               profilePic { 
                 childImageSharp {
-                  fixed(width: 56, height: 56) {
+                  fixed(width: 54, height: 54) {
                     ...GatsbyImageSharpFixed
                   }
                 }
