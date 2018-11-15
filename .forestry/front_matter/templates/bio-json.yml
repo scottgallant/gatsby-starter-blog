@@ -1,0 +1,20 @@
+---
+label: bio.json
+hide_body: 
+is_partial: 
+fields:
+- name: name
+  label: Name
+  type: text
+  hidden: false
+  default: ''
+- name: profilePic
+  label: Profilepic
+  type: text
+  hidden: false
+  default: ''
+- name: bio
+  label: Bio
+  type: textarea
+  hidden: false
+  default: ''
