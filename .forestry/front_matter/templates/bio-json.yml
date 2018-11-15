@@ -18,3 +18,5 @@ fields:
     wysiwyg: true
     schema:
       format: html
+pages:
+- src/data/bio.json
