@@ -1,7 +1,7 @@
 ---
 new_page_extension: md
 auto_deploy: false
-admin_path: 
+admin_path: ''
 webhook_url: 
 sections:
 - type: directory
@@ -25,3 +25,9 @@ use_front_matter_path: false
 file_template: ":filename:"
 build:
   preview_command: gatsby develop -p 8080 -H 0.0.0.0
+  publish_command: gatsby build
+  preview_output_directory: public
+  output_directory: public
+  instant_preview_command: gatsby develop -H 0.0.0.0 -p 8080
+  preview_docker_image: forestryio/build:latest
+  mount_path: "/opt/buildhome/repo"

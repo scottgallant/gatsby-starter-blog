@@ -1,7 +1,6 @@
 ---
 label: Page
 hide_body: false
-is_partial: false
 fields:
 - type: text
   name: title
@@ -10,5 +9,5 @@ fields:
   name: date
   label: Date
 pages:
-- src/pages/test.md
 - src/pages/test-post.md
+- src/pages/test.md
